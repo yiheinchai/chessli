@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chessli</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="score-sheet">
+      <header class="brand-row">
+        <div class="brand-mark" aria-hidden="true">
+          <span>c</span><i>→</i><span>li</span>
+        </div>
+        <div>
+          <h1>Chessli</h1>
+          <p>Post-game analysis, without the detour.</p>
+        </div>
+      </header>
+
+      <section class="status-card" aria-live="polite">
+        <div class="route" aria-hidden="true">
+          <span class="square square-dark">c</span>
+          <span class="flight"><i></i><b>→</b></span>
+          <span class="square square-light">li</span>
+        </div>
+        <div class="status-copy">
+          <span class="status-dot" id="status-dot"></span>
+          <p id="status-text">Ready for your next game</p>
+        </div>
+      </section>
+
+      <label class="setting-row" for="auto-open">
+        <span>
+          <strong>Open after every game</strong>
+          <small>Detect the finish and launch Lichess.</small>
+        </span>
+        <span class="switch">
+          <input id="auto-open" type="checkbox">
+          <span class="switch-track" aria-hidden="true"><i></i></span>
+        </span>
+      </label>
+
+      <button class="review-button" id="review-button" type="button" disabled>
+        Review this game <span aria-hidden="true">↗</span>
+      </button>
+
+      <a class="recent-link is-hidden" id="recent-link" target="_blank" rel="noreferrer">
+        <span>Last analysis</span><strong id="recent-players"></strong>
+      </a>
+
+      <aside class="disclosure">
+        <span aria-hidden="true">i</span>
+        <p>The game PGN, including player names and moves, is sent to Lichess and imported publicly.</p>
+      </aside>
+
+      <footer>
+        <span>Not affiliated with Chess.com or Lichess.</span>
+        <a href="privacy.html" target="_blank">Privacy</a>
+      </footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+# Chrome Web Store listing
+
+## Product details
+
+- **Name:** Chessli
+- **Summary:** Open finished Chess.com games on the Lichess analysis board automatically.
+- **Category:** Tools
+- **Language:** English
+- **Visibility:** Public
+- **Pricing:** Free
+
+## Detailed description
+
+Your game ends. Your analysis begins.
+
+Chessli detects when a supported Chess.com game finishes, retrieves its public PGN, imports it through Lichess’s official API, and opens the Lichess analysis board in a new tab.
+
+Use the toolbar popup to pause automatic opening, review the game in your current Chess.com tab, or return to your latest Lichess analysis.
+
+Important privacy note: the game PGN—including player usernames, ratings, timestamps, moves, clock times, result, and original game link—is sent to Lichess and imported publicly. Anyone with the resulting link may view it.
+
+Chessli has no developer-operated server, analytics, advertising, data sale, or account system. Settings and up to 20 recent review links stay in Chrome’s local extension storage.
+
+Chessli is not affiliated with Chess.com or Lichess.
+
+## Single purpose
+
+Automatically transfer a finished Chess.com game to a Lichess analysis board and open it for review.
+
+## Permission justifications
+
+### storage
+
+Stores the automatic-opening preference, current status, and up to 20 recent Chess.com-to-Lichess review links locally. It also prevents the same game from opening more than once.
+
+### Host access: www.chess.com
+
+Runs only on Chess.com game/play pages, reads the numeric game ID from the URL, and requests public finished-game metadata from Chess.com’s game endpoint so the extension can detect completion and identify the players.
+
+### Host access: api.chess.com
+
+Retrieves the finished game’s public PGN from Chess.com’s official Published Data API.
+
+### Host access: lichess.org
+
+Submits the PGN to Lichess’s official import API and opens the resulting Lichess analysis-board URL.
+
+## Remote code
+
+No. All executable JavaScript is included in the extension package. Network responses are handled as data only.
+
+## Data-use disclosures
+
+Select these data types:
+
+- Web history: the current supported Chess.com game URL/ID is used to provide the feature.
+- Website content: public game metadata and PGN are retrieved from Chess.com.
+- Personally identifiable information: Chess.com usernames can appear in the PGN.
+- User activity: chess moves, results, ratings, clock times, and game timestamps can appear in the PGN.
+
+The data is used only for the extension’s single purpose. It is not sold, used for advertising or creditworthiness, or accessed by a developer. PGN data is transferred to Lichess over HTTPS because that transfer is necessary to create the requested public analysis board.
+
+## Reviewer test instructions
+
+1. Install the extension.
+2. Open `https://www.chess.com/game/172857749116`.
+3. Open the Chessli toolbar popup.
+4. Choose **Review this game**.
+5. Verify that a new tab opens at a URL beginning with `https://lichess.org/analysis/game/` and shows the same players and moves.
+6. Return to the popup and verify that the automatic-opening switch and latest-analysis link work.
+
+No test credentials are required because the supplied test game is public.

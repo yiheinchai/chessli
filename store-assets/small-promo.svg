@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <rect width="440" height="280" fill="#171816"/>
+  <g transform="translate(48 48)">
+    <rect width="84" height="84" rx="11" fill="#d9decf"/>
+    <text x="42" y="53" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="26" font-weight="800" fill="#171816">c</text>
+    <path d="M111 42h83" stroke="#84a95c" stroke-width="3"/>
+    <path d="m181 29 14 13-14 13" fill="none" stroke="#84a95c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="222" width="84" height="84" rx="11" fill="#84a95c"/>
+    <text x="264" y="53" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="25" font-weight="800" fill="#10140d">li</text>
+  </g>
+  <text x="48" y="185" font-family="Avenir Next,Segoe UI,sans-serif" font-size="37" font-weight="750" letter-spacing="-1.5" fill="#f1f0ea">Game over. Analysis open.</text>
+  <text x="49" y="219" font-family="Avenir Next,Segoe UI,sans-serif" font-size="15" fill="#aaa99f">Chess.com games → Lichess analysis, automatically.</text>
+</svg>

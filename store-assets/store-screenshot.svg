@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#070806" flood-opacity=".34"/>
+    </filter>
+    <pattern id="board" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#d5d8cf"/><rect x="60" width="60" height="60" fill="#738b5c"/>
+      <rect y="60" width="60" height="60" fill="#738b5c"/><rect x="60" y="60" width="60" height="60" fill="#d5d8cf"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="800" fill="#141512"/>
+  <rect x="0" y="0" width="570" height="800" fill="url(#board)" opacity=".26"/>
+  <rect x="0" y="0" width="570" height="800" fill="#11120f" opacity=".58"/>
+
+  <g fill="#f1f0ea" font-family="Avenir Next,Segoe UI,sans-serif">
+    <text x="76" y="98" font-size="16" font-weight="700" letter-spacing="3" fill="#9fbb7d">CHESS.COM → LICHESS</text>
+    <text x="76" y="174" font-size="58" font-weight="750" letter-spacing="-2">Game over.</text>
+    <text x="76" y="235" font-size="58" font-weight="750" letter-spacing="-2">Analysis open.</text>
+    <text x="79" y="292" font-size="19" fill="#b4b5ac">The finished game moves straight to a</text>
+    <text x="79" y="321" font-size="19" fill="#b4b5ac">Lichess analysis board. No copy and paste.</text>
+  </g>
+
+  <g transform="translate(76 438)">
+    <rect width="78" height="78" rx="8" fill="#e1e3db"/><text x="39" y="49" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="25" font-weight="800" fill="#171816">c</text>
+    <path d="M98 39h87" stroke="#84a95c" stroke-width="3"/>
+    <path d="m172 26 14 13-14 13" fill="none" stroke="#84a95c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="207" width="78" height="78" rx="8" fill="#84a95c"/><text x="246" y="49" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="23" font-weight="800" fill="#10140d">li</text>
+  </g>
+
+  <g transform="translate(730 90)" filter="url(#shadow)">
+    <rect width="410" height="620" rx="18" fill="#171816" stroke="#3a3c36"/>
+    <g transform="translate(28 28)" font-family="Avenir Next,Segoe UI,sans-serif">
+      <g>
+        <rect width="60" height="44" rx="7" fill="#10110f" stroke="#383a34"/>
+        <text x="15" y="27" font-family="SFMono-Regular,monospace" font-size="13" font-weight="800" fill="#d9decf">c</text>
+        <text x="29" y="27" font-size="13" fill="#aaa99f">→</text>
+        <text x="43" y="27" font-family="SFMono-Regular,monospace" font-size="12" font-weight="800" fill="#84a95c">li</text>
+        <text x="76" y="21" font-size="24" font-weight="750" fill="#f2f1ec">Chessli</text>
+        <text x="76" y="39" font-size="11" fill="#aaa99f">Post-game analysis, without the detour.</text>
+      </g>
+      <g transform="translate(0 74)">
+        <rect width="354" height="164" rx="11" fill="#22231f" stroke="#383a34"/>
+        <rect x="20" y="22" width="60" height="60" rx="7" fill="#10110f"/>
+        <text x="50" y="59" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="17" font-weight="800" fill="#d9decf">c</text>
+        <path d="M80 52h194" stroke="#4a4c45"/>
+        <path d="M80 52h74" stroke="#84a95c" stroke-width="2"/>
+        <rect x="274" y="22" width="60" height="60" rx="7" fill="#84a95c"/>
+        <text x="304" y="59" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="16" font-weight="800" fill="#10140d">li</text>
+        <circle cx="23" cy="118" r="5" fill="#84a95c"/>
+        <text x="37" y="122" font-size="13" fill="#d9decf">Ready for your next game</text>
+      </g>
+      <g transform="translate(0 260)">
+        <text y="18" font-size="14" font-weight="700" fill="#f2f1ec">Open after every game</text>
+        <text y="38" font-size="11" fill="#aaa99f">Detect the finish and launch Lichess.</text>
+        <rect x="307" y="4" width="47" height="27" rx="14" fill="#5d7f3f"/>
+        <circle cx="340" cy="17.5" r="9" fill="#fff"/>
+      </g>
+      <g transform="translate(0 323)">
+        <rect width="354" height="48" rx="8" fill="#84a95c"/>
+        <text x="177" y="30" text-anchor="middle" font-size="14" font-weight="750" fill="#10140d">Review this game  ↗</text>
+      </g>
+      <g transform="translate(0 394)">
+        <path d="M0 0h354" stroke="#383a34"/>
+        <circle cx="9" cy="32" r="8" fill="none" stroke="#6a6c63"/>
+        <text x="9" y="36" text-anchor="middle" font-family="monospace" font-size="10" fill="#aaa99f">i</text>
+        <text x="28" y="28" font-size="10.5" fill="#aaa99f">The game PGN, including player names and moves,</text>
+        <text x="28" y="44" font-size="10.5" fill="#aaa99f">is sent to Lichess and imported publicly.</text>
+      </g>
+      <text x="0" y="504" font-size="10" fill="#777970">No analytics · No ads · Local settings</text>
+      <text x="354" y="504" text-anchor="end" font-size="10" fill="#aaa99f">Privacy</text>
+    </g>
+  </g>
+</svg>
