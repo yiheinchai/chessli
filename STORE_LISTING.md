@@ -9,6 +9,7 @@
 - **Visibility:** Public
 - **Pricing:** Free
 - **Privacy policy:** https://yiheinchai.com/chessli/privacy.html
+- **Chrome Web Store item ID:** `oipnihhbifnkmkfilgnimpffmjabgmkm`
 
 ## Detailed description
 
