@@ -8,6 +8,7 @@
 - **Language:** English
 - **Visibility:** Public
 - **Pricing:** Free
+- **Privacy policy:** https://yiheinchai.com/chessli/privacy.html
 
 ## Detailed description
 

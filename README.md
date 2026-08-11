@@ -10,6 +10,8 @@ Chessli opens a finished Chess.com game on the Lichess analysis board automatica
 
 Lichess imports are public. Chessli has no developer-operated server, analytics, ads, or account system.
 
+Privacy policy: <https://yiheinchai.com/chessli/privacy.html>
+
 ## Local installation
 
 1. Run `npm test` and `npm run package`.

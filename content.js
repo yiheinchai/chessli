@@ -1,5 +1,5 @@
 (() => {
-  const GAME_URL = /^https:\/\/(?:www\.)?chess\.com\/game\/(?:(?:live|daily)\/)?(\d+)(?:[/?#]|$)/i;
+  const GAME_URL = /^https:\/\/(?:www\.)?chess\.com\/game\/(?:live\/)?(\d+)(?:[/?#]|$)/i;
   const FALLBACK_INTERVAL_MS = 12_000;
   const GAME_OVER_SELECTORS = [
     "game-over-modal",

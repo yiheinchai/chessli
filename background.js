@@ -26,21 +26,21 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message?.type === "CHECK_GAME") {
     checkGame(message.gameId, { force: false, armed: Boolean(message.armed) })
       .then(sendResponse)
-      .catch((error) => sendResponse(errorResponse(error)));
+      .catch(async (error) => sendResponse(await errorResponse(error)));
     return true;
   }
 
   if (message?.type === "REVIEW_GAME") {
     checkGame(message.gameId, { force: true, armed: true })
       .then(sendResponse)
-      .catch((error) => sendResponse(errorResponse(error)));
+      .catch(async (error) => sendResponse(await errorResponse(error)));
     return true;
   }
 
   if (message?.type === "GET_POPUP_STATE") {
     getPopupState(message.url)
       .then(sendResponse)
-      .catch((error) => sendResponse(errorResponse(error)));
+      .catch(async (error) => sendResponse(await errorResponse(error)));
     return true;
   }
 
@@ -150,8 +150,8 @@ async function recordError(error) {
   return { state: "error", error: message };
 }
 
-function errorResponse(error) {
-  recordError(error).catch(() => {});
+async function errorResponse(error) {
   const message = error instanceof Error ? error.message : "The review could not be opened.";
+  await recordError(error).catch(() => {});
   return { state: "error", error: message };
 }

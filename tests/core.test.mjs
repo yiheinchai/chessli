@@ -13,7 +13,7 @@ import { fetchGameMetadata, fetchGamePgn, importPgnToLichess } from "../lib/revi
 test("extracts IDs from current Chess.com game URL shapes", () => {
   assert.equal(extractGameId("https://www.chess.com/game/172857749116"), "172857749116");
   assert.equal(extractGameId("https://www.chess.com/game/live/172857749116?tab=analysis"), "172857749116");
-  assert.equal(extractGameId("https://www.chess.com/game/daily/12345"), "12345");
+  assert.equal(extractGameId("https://www.chess.com/game/daily/12345"), null);
   assert.equal(extractGameId("https://www.chess.com/play/online"), null);
 });
 
