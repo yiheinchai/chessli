@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_dir="$(cd "$(dirname "$0")/.." && pwd)"
 build_dir="$repo_dir/dist"
-package_file="$build_dir/chessli-1.0.0.zip"
+package_file="$build_dir/chessli-1.0.1.zip"
 
 mkdir -p "$build_dir"
 rm -f "$package_file"
@@ -13,6 +13,7 @@ zip -q -r "$package_file" \
   manifest.json \
   background.js \
   content.js \
+  lichess-paste.js \
   popup.html \
   popup.css \
   popup.js \

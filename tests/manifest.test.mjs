@@ -15,11 +15,25 @@ test("ships a minimal Manifest V3 permission set", () => {
 });
 
 test("declares only packaged executable code", async () => {
-  const files = ["background.js", "content.js", "popup.js", "lib/core.js", "lib/review.js"];
+  const files = [
+    "background.js",
+    "content.js",
+    "lichess-paste.js",
+    "popup.js",
+    "lib/core.js",
+    "lib/review.js"
+  ];
   for (const file of files) {
     const source = await readFile(new URL(`../${file}`, import.meta.url), "utf8");
     assert.doesNotMatch(source, /<script[^>]+src=["']https?:/i);
     assert.doesNotMatch(source, /\beval\s*\(/);
     assert.doesNotMatch(source, /new\s+Function\s*\(/);
   }
+});
+
+test("hands the PGN to Lichess's signed-in computer-review form", async () => {
+  const lichessScript = await readFile(new URL("../lichess-paste.js", import.meta.url), "utf8");
+  assert.match(lichessScript, /input\[name="analyse"\]/);
+  assert.match(lichessScript, /analyseInput\.checked = true/);
+  assert.match(lichessScript, /form\.requestSubmit\(\)/);
 });

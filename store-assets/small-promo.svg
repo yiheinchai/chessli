@@ -8,6 +8,6 @@
     <rect x="222" width="84" height="84" rx="11" fill="#84a95c"/>
     <text x="264" y="53" text-anchor="middle" font-family="SFMono-Regular,monospace" font-size="25" font-weight="800" fill="#10140d">li</text>
   </g>
-  <text x="48" y="185" font-family="Avenir Next,Segoe UI,sans-serif" font-size="37" font-weight="750" letter-spacing="-1.5" fill="#f1f0ea">Game over. Analysis open.</text>
-  <text x="49" y="219" font-family="Avenir Next,Segoe UI,sans-serif" font-size="15" fill="#aaa99f">Chess.com games → Lichess analysis, automatically.</text>
+  <text x="48" y="185" font-family="Avenir Next,Segoe UI,sans-serif" font-size="37" font-weight="750" letter-spacing="-1.5" fill="#f1f0ea">Game over. Review open.</text>
+  <text x="49" y="219" font-family="Avenir Next,Segoe UI,sans-serif" font-size="15" fill="#aaa99f">Chess.com games → Lichess review, automatically.</text>
 </svg>

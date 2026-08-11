@@ -19,8 +19,8 @@ autoOpen.addEventListener("change", async () => {
 reviewButton.addEventListener("click", async () => {
   if (!activeGameId) return;
   reviewButton.disabled = true;
-  reviewButton.textContent = "Importing game…";
-  showStatus("working", "Sending the game to Lichess");
+  reviewButton.textContent = "Starting review…";
+  showStatus("working", "Requesting Lichess computer review");
 
   const response = await chrome.runtime.sendMessage({ type: "REVIEW_GAME", gameId: activeGameId });
   if (response?.state === "error") {
@@ -30,8 +30,11 @@ reviewButton.addEventListener("click", async () => {
     return;
   }
 
-  showStatus("opened", response?.state === "reopened" ? "Lichess analysis reopened" : "Lichess analysis opened");
-  reviewButton.textContent = "Opened in Lichess";
+  const reopened = response?.state === "reopened";
+  showStatus(reopened ? "opened" : "working", reopened
+    ? "Lichess computer review reopened"
+    : "Opening Lichess computer review");
+  reviewButton.textContent = reopened ? "Reopened in Lichess" : "Opening in Lichess…";
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {

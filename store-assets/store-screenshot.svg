@@ -15,9 +15,9 @@
   <g fill="#f1f0ea" font-family="Avenir Next,Segoe UI,sans-serif">
     <text x="76" y="98" font-size="16" font-weight="700" letter-spacing="3" fill="#9fbb7d">CHESS.COM → LICHESS</text>
     <text x="76" y="174" font-size="58" font-weight="750" letter-spacing="-2">Game over.</text>
-    <text x="76" y="235" font-size="58" font-weight="750" letter-spacing="-2">Analysis open.</text>
+    <text x="76" y="235" font-size="58" font-weight="750" letter-spacing="-2">Review open.</text>
     <text x="79" y="292" font-size="19" fill="#b4b5ac">The finished game moves straight to a</text>
-    <text x="79" y="321" font-size="19" fill="#b4b5ac">Lichess analysis board. No copy and paste.</text>
+    <text x="79" y="321" font-size="19" fill="#b4b5ac">Lichess computer review. No copy and paste.</text>
   </g>
 
   <g transform="translate(76 438)">
@@ -36,7 +36,7 @@
         <text x="29" y="27" font-size="13" fill="#aaa99f">→</text>
         <text x="43" y="27" font-family="SFMono-Regular,monospace" font-size="12" font-weight="800" fill="#84a95c">li</text>
         <text x="76" y="21" font-size="24" font-weight="750" fill="#f2f1ec">Chessli</text>
-        <text x="76" y="39" font-size="11" fill="#aaa99f">Post-game analysis, without the detour.</text>
+        <text x="76" y="39" font-size="11" fill="#aaa99f">Computer review, without the detour.</text>
       </g>
       <g transform="translate(0 74)">
         <rect width="354" height="164" rx="11" fill="#22231f" stroke="#383a34"/>
@@ -64,7 +64,7 @@
         <circle cx="9" cy="32" r="8" fill="none" stroke="#6a6c63"/>
         <text x="9" y="36" text-anchor="middle" font-family="monospace" font-size="10" fill="#aaa99f">i</text>
         <text x="28" y="28" font-size="10.5" fill="#aaa99f">The game PGN, including player names and moves,</text>
-        <text x="28" y="44" font-size="10.5" fill="#aaa99f">is sent to Lichess and imported publicly.</text>
+        <text x="28" y="44" font-size="10.5" fill="#aaa99f">is sent to Lichess for a public computer review.</text>
       </g>
       <text x="0" y="504" font-size="10" fill="#777970">No analytics · No ads · Local settings</text>
       <text x="354" y="504" text-anchor="end" font-size="10" fill="#aaa99f">Privacy</text>

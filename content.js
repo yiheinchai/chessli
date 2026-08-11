@@ -31,7 +31,7 @@
       });
 
       if (response?.state === "playing") armed = true;
-      if (["opened", "already_opened", "expired", "disabled"].includes(response?.state)) {
+      if (["opening", "opened", "already_opened", "expired", "disabled"].includes(response?.state)) {
         stopped = true;
       }
     } catch {

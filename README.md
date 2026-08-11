@@ -1,14 +1,14 @@
 # Chessli
 
-Chessli opens a finished Chess.com game on the Lichess analysis board automatically.
+Chessli opens a finished Chess.com game as a Lichess computer review automatically.
 
 ## How it works
 
 1. A small content script recognizes supported Chess.com game URLs and watches for the game to finish.
 2. The extension retrieves the finished game’s public PGN from Chess.com.
-3. It submits that PGN to Lichess’s official import endpoint and opens the resulting analysis board.
+3. It opens Lichess’s import page, fills the PGN, requests computer analysis through your signed-in Lichess session, and opens the resulting shareable game URL.
 
-Lichess imports are public. Chessli has no developer-operated server, analytics, ads, or account system.
+Lichess computer analysis requires you to be signed in to Lichess. Imports are public. Chessli has no developer-operated server, analytics, ads, or account system.
 
 Privacy policy: <https://yiheinchai.com/chessli/privacy.html>
 
@@ -21,6 +21,6 @@ Privacy policy: <https://yiheinchai.com/chessli/privacy.html>
 
 ## Publishing
 
-The uploadable ZIP is written to `dist/chessli-1.0.0.zip`. Store copy and reviewer disclosures are in `STORE_LISTING.md`.
+The uploadable ZIP is written to `dist/chessli-1.0.1.zip`. Store copy and reviewer disclosures are in `STORE_LISTING.md`.
 
 Chessli is not affiliated with Chess.com or Lichess.

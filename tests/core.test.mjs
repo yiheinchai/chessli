@@ -1,14 +1,15 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  analysisUrl,
   archiveDate,
   archiveUrl,
   extractGameId,
   findPgn,
-  isRecentFinish
+  isRecentFinish,
+  lichessGameUrl,
+  lichessPasteUrl
 } from "../lib/core.js";
-import { fetchGameMetadata, fetchGamePgn, importPgnToLichess } from "../lib/review.js";
+import { fetchGameMetadata, fetchGamePgn } from "../lib/review.js";
 
 test("extracts IDs from current Chess.com game URL shapes", () => {
   assert.equal(extractGameId("https://www.chess.com/game/172857749116"), "172857749116");
@@ -35,9 +36,18 @@ test("finds only the matching game PGN", () => {
   assert.equal(findPgn(games, "2"), null);
 });
 
-test("builds and validates the Lichess analysis URL", () => {
-  assert.equal(analysisUrl("3qsoF7x1"), "https://lichess.org/analysis/game/3qsoF7x1");
-  assert.throws(() => analysisUrl("bad/id"), /invalid/);
+test("recognizes the short Lichess review URL", () => {
+  assert.equal(lichessGameUrl("https://lichess.org/n0uVFFan"), "https://lichess.org/n0uVFFan");
+  assert.equal(lichessGameUrl("https://lichess.org/n0uVFFan/white#42"), "https://lichess.org/n0uVFFan");
+  assert.equal(lichessGameUrl("https://lichess.org/analysis/game/n0uVFFan"), null);
+});
+
+test("builds a private hand-off URL for the Lichess paste page", () => {
+  assert.equal(
+    lichessPasteUrl("12345678-1234-1234-1234-123456789abc"),
+    "https://lichess.org/paste#chessli=12345678-1234-1234-1234-123456789abc"
+  );
+  assert.throws(() => lichessPasteUrl("short"), /invalid/);
 });
 
 test("recognizes a recent completed game", () => {
@@ -47,7 +57,7 @@ test("recognizes a recent completed game", () => {
   assert.equal(isRecentFinish(metadata, now + 10 * 60 * 1000), false);
 });
 
-test("runs metadata, archive, and Lichess requests with expected contracts", async () => {
+test("runs Chess.com metadata and archive requests with expected contracts", async () => {
   const requests = [];
   const metadata = {
     game: {
@@ -63,19 +73,16 @@ test("runs metadata, archive, and Lichess requests with expected contracts", asy
     if (url.includes("api.chess.com")) {
       return jsonResponse({ games: [{ url: "https://www.chess.com/game/live/172857749116", pgn: "1. e4 e5 1-0" }] });
     }
-    if (url === "https://lichess.org/api/import") {
-      return jsonResponse({ id: "3qsoF7x1", url: "https://lichess.org/3qsoF7x1" });
-    }
     throw new Error(`Unexpected URL: ${url}`);
   };
 
   const fetchedMetadata = await fetchGameMetadata("172857749116", fakeFetch);
   const pgn = await fetchGamePgn("172857749116", fetchedMetadata, fakeFetch);
-  const imported = await importPgnToLichess(pgn, fakeFetch);
 
-  assert.equal(imported.analysisUrl, "https://lichess.org/analysis/game/3qsoF7x1");
-  assert.match(requests[2].options.body, /pgn=1\.\+e4\+e5\+1-0/);
-  assert.equal(requests[2].options.credentials, "omit");
+  assert.equal(pgn, "1. e4 e5 1-0");
+  assert.equal(requests.length, 2);
+  assert.equal(requests[0].options.credentials, "omit");
+  assert.equal(requests[1].options.credentials, "omit");
 });
 
 function jsonResponse(payload, status = 200) {

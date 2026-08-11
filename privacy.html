@@ -17,7 +17,7 @@
     </style>
   </head>
   <body>
-    <p class="stamp">Effective August 11, 2026 · Chessli 1.0</p>
+    <p class="stamp">Effective August 11, 2026 · Chessli 1.0.1</p>
     <h1>Privacy, in plain language.</h1>
     <div class="notice"><strong>Chessli has no developer-operated server, analytics, advertising, or data sale.</strong></div>
 
@@ -25,13 +25,13 @@
     <p>When you visit a supported Chess.com game page, Chessli reads the numeric game ID from that page’s URL. After the game finishes—or when you choose “Review this game”—Chessli retrieves the game’s public metadata and PGN from Chess.com. A PGN can include player usernames, ratings, game timestamps, moves, clock times, result, and the original Chess.com game link.</p>
 
     <h2>Why data is sent to Lichess</h2>
-    <p>Chessli sends that PGN over HTTPS to the official Lichess game-import API solely to create the Lichess analysis board you requested. <strong>Lichess imports are public</strong> and may be viewed by anyone with the resulting link. Lichess processes that data under the <a href="https://lichess.org/privacy" target="_blank" rel="noreferrer">Lichess privacy policy</a>.</p>
+    <p>Chessli opens the official Lichess import page, fills in the PGN, selects “Request a computer analysis,” and submits the form through your signed-in Lichess session. Chessli does not read or store your Lichess credentials. <strong>Lichess imports are public</strong> and may be viewed by anyone with the resulting link. Lichess processes that data under the <a href="https://lichess.org/privacy" target="_blank" rel="noreferrer">Lichess privacy policy</a>.</p>
 
     <h2>What stays on your device</h2>
-    <p>Your automatic-opening preference and up to 20 recent Chess.com-to-Lichess review links are stored locally with Chrome extension storage. This prevents duplicate imports and gives you a shortcut to your latest analysis. Chessli does not sync this information to a developer service.</p>
+    <p>Your automatic-opening preference and up to 20 recent Chess.com-to-Lichess review links are stored locally with Chrome extension storage. The pending PGN is also kept locally just long enough to hand it to the Lichess import page, then removed when the import completes; abandoned pending imports expire after 15 minutes and are removed the next time Chessli runs. This prevents duplicate imports and gives you a shortcut to your latest review. Chessli does not sync this information to a developer service.</p>
 
     <h2>Sharing and retention</h2>
-    <p>Chessli shares PGN data only with Lichess to provide its single analysis-opening feature. It does not sell data, use it for advertising or credit decisions, or allow a developer to read it. Local extension data remains until Chrome removes it or you uninstall the extension. Lichess controls retention of the public import.</p>
+    <p>Chessli shares PGN data only with Lichess to provide its single computer-review feature. It does not sell data, use it for advertising or credit decisions, or allow a developer to read it. Local extension settings and review history remain until Chrome removes them or you uninstall the extension. Lichess controls retention of the public import and computer analysis.</p>
 
     <h2>Your controls</h2>
     <p>You can pause automatic imports in the Chessli popup. Uninstalling Chessli removes its locally stored settings and recent-link history. An already imported Lichess game is controlled by Lichess and is not deleted by uninstalling Chessli.</p>
